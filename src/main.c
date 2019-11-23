@@ -1,4 +1,4 @@
-#include "TAD-palavra.h"
+#include "word.h"
 int main(){
 
 
