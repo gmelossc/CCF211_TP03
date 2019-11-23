@@ -1,6 +1,3 @@
-// includes here, only testing
-
-
 int main(){
 
 

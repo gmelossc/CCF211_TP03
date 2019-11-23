@@ -1,0 +1,1 @@
+#include "TAD-palavra.h"
