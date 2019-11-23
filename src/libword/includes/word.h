@@ -7,6 +7,5 @@
 typedef struct{
     char palavra[MAXTAM];
 }Word;
-
-
+void Interface();
 #endif //CCF211_TP03_TAD_PALAVRA_H
