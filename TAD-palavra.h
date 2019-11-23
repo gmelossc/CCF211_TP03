@@ -3,9 +3,9 @@
 #include <string.h>
 #include <strlib.h>
 #include <stdio.h>
-
+#define MAXTAM 1000
 typedef struct{
-    char palavra;
+    char palavra[MAXTAM];
 }Word;
 
 
