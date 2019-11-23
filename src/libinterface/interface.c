@@ -9,6 +9,12 @@ void Interface(){
         scanf("%d", &escolha3);
         if (escolha3 == 1) {
             //utiliza todos os cenarios de teste
+            printf("Deseja que o programa termine?:\n");
+            printf("1-sim\n");printf("2-nao\n");
+            scanf("%d",&exit);
+            if(exit==1){
+                break;
+            }
         } else {
             printf("Escolha uma das opcoes de TAD's abaixo:\n");
             printf("1-TAD-palavra\n");
