@@ -10,6 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09ce48b7-8ada-4ec0-a1a5-abc955c8cca2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/CCF211_TP03.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libinterface/interface.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/libinterface/interface.c" afterDir="false" />
     </list>
@@ -66,6 +70,7 @@
       <workItem from="1574524851151" duration="5067000" />
       <workItem from="1574535705341" duration="987000" />
       <workItem from="1574536733550" duration="3139000" />
+      <workItem from="1574543309163" duration="1039000" />
     </task>
     <task id="LOCAL-00001" summary="Hello">
       <created>1574536919226</created>
