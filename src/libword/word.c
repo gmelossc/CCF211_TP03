@@ -27,8 +27,12 @@ void AddNoFim(TWord *palavra, char toAdd){
 }
 
 void RemDoFim(TWord *palavra){
-	//Esse if é necessário para que não haja segfault, mas depois melhorarei o cód de forma que
-	//o ultimo char possa ser removido seguramente
+	// Trecho não completamente otimizado
+	// If Else poderiam ser removidos
+	// Com uma lógica específica
+	// No entanto não há grande efeito
+	// Na eficiência, pois está função não é
+	// Utilizada em grandes loopś
 	if (palavra -> tamanho > 1){
 		TCelula *atualCel = palavra -> inicio;
 		while (atualCel -> prox -> prox != NULL){
@@ -38,10 +42,19 @@ void RemDoFim(TWord *palavra){
 		atualCel -> prox = NULL;
 		palavra -> tamanho--;
 	}
+	else if (palavra -> tamanho == 1){
+		free(palavra -> inicio);
+		palavra -> inicio = NULL;
+		palavra -> tamanho--;
+	}
 	else return;
 }
 
 void PrintPal(TWord *palavra){
+	if (palavra -> tamanho < 1){
+		printf("Palavra sem caracteres\n");
+		return;
+	}
 	TCelula *atualCel = palavra -> inicio;
 	while (atualCel -> prox != NULL){
 		printf("%c", atualCel -> letra);

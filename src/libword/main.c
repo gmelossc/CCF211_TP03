@@ -22,4 +22,10 @@ int main(){
 	PrintPal(&palA);
 	RemDoFim(&palA);
 	PrintPal(&palA);
+	RemDoFim(&palA);
+	PrintPal(&palA);
+	RemDoFim(&palA);
+	PrintPal(&palA);
+	RemDoFim(&palA);
+	PrintPal(&palA);
 }
