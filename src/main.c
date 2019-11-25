@@ -1,6 +1,4 @@
-#include "word.h"
+#include "libword/encaWord.h"
 int main(){
 
-
-  return 0;
 }
