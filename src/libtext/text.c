@@ -5,7 +5,8 @@ void Inicializa(Text *texto){
     texto->initial=NULL;
     texto->tamanho=0;
 }
-void InsereTexto(Text *texto,char texto){
+
+void InsereTexto(Text *texto, char texto){
     Tcel *aux;
     aux->
 }
