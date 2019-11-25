@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "encaWord.h"
+#include "includes/encaWord.h"
 
 void Inicializa(TWord *palavra){
 	palavra -> inicio = NULL;
