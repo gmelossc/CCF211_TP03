@@ -17,7 +17,7 @@ typedef struct{
 
 void Inicia(Text *texto);
 void InsereTexto(Text *texto,char text[20]);
-int RemoveTexto(Text *texto,char palavra[20]);
+int RemoveTexto(Text *texto);
 void PrintTexto(Text *texto);
 void TamanhoTexto(Text *texto);
 

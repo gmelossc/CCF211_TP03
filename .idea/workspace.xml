@@ -13,8 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libtext/includes/text.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libtext/includes/text.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libtext/text.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/libtext/text.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libword/encaWord.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/libword/encaWord.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libword/encaWord.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libword/encaWord.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +71,9 @@
       <workItem from="1574546954507" duration="105000" />
       <workItem from="1574547277746" duration="39000" />
       <workItem from="1574623608758" duration="2568000" />
+      <workItem from="1574691885388" duration="1387000" />
+      <workItem from="1574693307444" duration="621000" />
+      <workItem from="1574705024865" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Hello">
       <created>1574536919226</created>
@@ -137,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574546990419</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="TAD texto finalizado 2">
+      <created>1574691990017</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1574691990017</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +168,7 @@
     <MESSAGE value="Hello" />
     <MESSAGE value="Hello!!" />
     <MESSAGE value="alteração da interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="alteração da interface" />
+    <MESSAGE value="TAD texto finalizado 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="TAD texto finalizado 2" />
   </component>
 </project>

@@ -18,19 +18,19 @@ void InsereTexto(Text *texto,char text[20]) {
     texto->end->prox = NULL;
     texto->tamanhotexto++;
 }
-int RemoveTexto(Text *texto,char palavra[20]){
+int RemoveTexto(Text *texto){
     Tcel *aux;
-    if(texto->initial==texto->end){
-        return 0;
+    aux = texto -> initial;
+    if (texto->tamanhotexto == 1){
+        free(texto->initial);
+        texto->initial = NULL;
+        texto->tamanhotexto--;
     }
-    strcpy(palavra,texto->initial->palavra);
-    aux=texto->initial;
-    texto->initial=texto->initial->prox;
-    free(aux);
+    while (aux->prox->prox!=NULL)
+        aux=aux->prox;
+    free(aux->prox);
+    aux->prox=NULL;
     texto->tamanhotexto--;
-    if(texto->initial==NULL){
-        texto->end=NULL;
-    }
     return 1;
 }
 void PrintTexto(Text *texto){
