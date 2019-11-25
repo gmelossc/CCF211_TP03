@@ -2,21 +2,22 @@
 #define TP3_EXECUTAVEL_TEXT_H
 #include "encaWord.h"
 
-typedef struct Celula *Apontador;
+typedef struct cel* Apontador;
 
-typedef struct Celula{
-    struct Celula *prox;
-    char texto;
-}Tcel;
+typedef struct cel {
+    struct cel *prox;
+    char palavra[20];
+} Tcel;
 
 typedef struct{
-    Tcel *initial;
-    int tamanho;
+    Apontador initial;
+    Apontador end;
+    int tamanhotexto;
 }Text;
 
-void Inicializa(Text *texto);
-void InsereTexto(Text *texto,char texto);
-void RemoveTexto(Text *texto);
+void Inicia(Text *texto);
+void InsereTexto(Text *texto,char text[20]);
+int RemoveTexto(Text *texto,char palavra[20]);
 void PrintTexto(Text *texto);
 void TamanhoTexto(Text *texto);
 
