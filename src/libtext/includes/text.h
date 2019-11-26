@@ -6,7 +6,7 @@ typedef struct cel* Apontador;
 
 typedef struct cel {
     struct cel *prox;
-    char palavra[20];
+    TWord word;
 } Tcel;
 
 typedef struct{
@@ -16,7 +16,7 @@ typedef struct{
 }Text;
 
 void Inicia(Text *texto);
-void InsereTexto(Text *texto,char text[20]);
+void InsereTexto(Text *texto,TWord *word);
 int RemoveTexto(Text *texto);
 void PrintTexto(Text *texto);
 void TamanhoTexto(Text *texto);
