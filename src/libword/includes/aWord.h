@@ -3,7 +3,7 @@
 #ifndef TAWORD_H_
 #define TAWORD_H_
 
-#define MAXW 1000
+#define MAXW 100
 
 typedef char Word;
 typedef int Size;

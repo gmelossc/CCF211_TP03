@@ -11,18 +11,21 @@ void initWord(t_word *W){
 
 int insertCharToWord(Word **word, char toAdd, int pos){
   (*word)[pos] = toAdd;
-  (*word)[pos++] = '\0';
+  (*word)[++pos] = '\0';
   return pos;
 }
 
 
 void insertChar(t_word *W, char toAdd){
     W->size = insertCharToWord(&(W->word), toAdd, W->size);
-    printf("%c\n", W->word[W->size - 1]);
 }
 
 void removeChar(t_word *W){
-  W->word[W->size--] = '\0';
+  if(W->size > 0){
+  W->size--;
+  W->word[W->size] = '\0';
+  }
+  else printf("Não há caracteres para remover\n");
 }
 
 int wordSize(t_word W){
@@ -30,7 +33,6 @@ int wordSize(t_word W){
 }
 
 void printWord(t_word W){
-  int i;
-  for(i=0; W.word[i]!='\0' ; i++) printf("%c", W.word[i]);
+  for(int i=0; W.word[i]!='\0' ; i++) printf("%c", W.word[i]);
   printf("\n");
 }
