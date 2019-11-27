@@ -8,21 +8,21 @@ void Interface(){
     scanf("%d",&escolha1);
     if(escolha1==1){
         int resposta;
-        char letra;
+        char letra[0];
         int controle=0;
         TWord word;
         Inicializa(&word);
         while(controle!=1){
             printf("Digite a letra que deseja inserir:");
-            scanf("%c",&letra);
-            AddNoFim(&word,letra);
+            scanf("%s",letra);
+            AddNoFim(&word,*letra);
             printf("1-Continuar\n2-Parar\nResposta->");
             scanf("%d",&resposta);
             if(resposta!=1){
                 controle=1;
             }
         }
-        printf("Sua palavra formada é:");
+        printf("Sua palavra formada e:");
         PrintPal(&word);
     }
     else if(escolha1==2){
