@@ -37,13 +37,12 @@ void PrintTexto(Text *texto){
     int contador=1;
     Apontador aux;
     aux=texto->initial;
-    printf("Texto");
+    printf("Texto:");
     while(aux != NULL){
-        printf("[%d]:",contador);
         PrintPal(&aux->word);
+        printf(" ");
         aux=aux->prox;
         contador++;
-        printf("\n");
     }
 }
 void TamanhoTexto(Text *texto){

@@ -49,15 +49,15 @@ void RemDoFim(TWord *palavra){
 }
 
 void PrintPal(TWord *palavra){
-	if (palavra -> tamanho < 1){
-		printf("Palavra sem caracteres\n");
-		return;
-	}
-	TCelula *atualCel = palavra -> inicio;
-	while (atualCel -> prox != NULL){
-		printf("%c", atualCel -> letra);
-		atualCel = atualCel -> prox;
-	} printf("%c\n", atualCel -> letra);
+    if (palavra -> tamanho < 1){
+        printf("Palavra sem caracteres\n");
+        return;
+    }
+    TCelula *atualCel = palavra -> inicio;
+    while (atualCel -> prox != NULL){
+        printf("%c", atualCel -> letra);
+        atualCel = atualCel -> prox;
+    } printf("%c", atualCel -> letra);
 }
 
 void PrintTam(TWord *palavra){
