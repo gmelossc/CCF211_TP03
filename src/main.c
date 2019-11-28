@@ -1,4 +1,7 @@
-#include "libword/encaWord.h"
+#include "gerarand.c"
+
 int main(){
-    Interface();
+	Text meuText;
+	meuText = geraTexto(100,10);
+	PrintTexto(&meuText);
 }

@@ -1,4 +1,4 @@
-#include "text.h"
+#include "includes/text.h"
 
 void Inicia(Text *texto){
     texto->initial=NULL;
@@ -37,7 +37,7 @@ void PrintTexto(Text *texto){
     int contador=1;
     Apontador aux;
     aux=texto->initial;
-    printf("Texto:");
+    printf("Texto:\n");
     while(aux != NULL){
         PrintPal(&aux->word);
         printf(" ");

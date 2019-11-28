@@ -1,19 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "libword/encaWord.c"
+#include "libtext/text.c"
 
-int genrand(int max_size_pal, int max_size_texto){
-	int contaTexto = max_size_texto;
+TWord geraPalavra(int max_size_pal){
+	TWord minhaWord;
+	Inicializa(&minhaWord);
+	int sizePalavra =  rand() % max_size_pal+1;
+	// gera caracteres da tabela ASCII com letra minuscula,
+	// 97 e 122 representam respectivamente 'a' e 'z' 
+	for (int i = 0; i < sizePalavra; i++){
+		char randChar = (rand() % (122 + 1 - 97) + 97);
+		AddNoFim(&minhaWord,randChar);
+	} 
+	return minhaWord;
+}
+
+Text geraTexto(int size_texto,int max_size_pal){
 	srand(time(NULL));
-
-	while (contaTexto > 1){
-		// gera caracteres da tabela ASCII com letra minuscula,
-		// 97 e 122 representam respectivamente 'a' e 'z' 
-		int sizePalavra =  rand() % max_size_pal+1;
-		for (int i = 0; i < sizePalavra; i++){
-			char randChar = (rand() % (122 + 1 - 97) + 97);
-			printf("%c",randChar);
-		} printf("%d\n",sizePalavra);
-		contaTexto--;
+	Text meuTexto;
+	Inicia(&meuTexto);
+	for (int i = 0; i < size_texto; i++){
+		TWord novaWord = geraPalavra(max_size_pal);
+		InsereTexto(&meuTexto,&novaWord);
 	}
+	return meuTexto;
 }

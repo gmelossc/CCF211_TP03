@@ -1,6 +1,5 @@
 #ifndef TP3_EXECUTAVEL_TEXT_H
 #define TP3_EXECUTAVEL_TEXT_H
-#include "encaWord.h"
 
 typedef struct cel* Apontador;
 
