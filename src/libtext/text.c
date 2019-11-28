@@ -44,7 +44,8 @@ void PrintTexto(Text *texto){
         aux=aux->prox;
         contador++;
     }
+    printf("\n");
 }
 void TamanhoTexto(Text *texto){
-    printf("Tamanho do texto:%d",texto->tamanhotexto);
+    printf("\nTamanho do texto:%d\n",texto->tamanhotexto);
 }

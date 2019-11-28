@@ -2,6 +2,7 @@
 
 int main(){
 	Text meuText;
-	meuText = geraTexto(100,10);
+	meuText = geraTexto(10,10);
 	PrintTexto(&meuText);
+	TamanhoTexto(&meuText);
 }
