@@ -1,8 +1,7 @@
 #include "gerarand.c"
 
-TCelula* selectionSort(TCelula* head) 
-{ 
-    TCelula *a, *b, *c, *d, *r; 
+Tcel* selectionSort(Tcel *head){
+    Tcel *a, *b, *c, *d, *r; 
   
     a = b = head; 
   
@@ -14,7 +13,7 @@ TCelula* selectionSort(TCelula* head)
         // While d is pointing to a valid node 
         while (d) { 
   
-            if (b->letra > d->letra) { 
+            if (b->word.inicio->letra > d->word.inicio->letra) { 
   
                 // If d appears immediately after b 
                 if (b->prox == d) { 
@@ -130,11 +129,9 @@ TCelula* selectionSort(TCelula* head)
 } 
 
 int main(){
-	TWord tha;
-	Inicializa(&tha);
-	AddNoFim(&tha,'b');
-	AddNoFim(&tha,'n');
-	AddNoFim(&tha,'a');
-	tha.inicio = selectionSort(tha.inicio);
-	PrintPal(&tha);
+	Text on;
+	Inicia(&on);
+	on = geraTexto(100,10);
+	on.initial = selectionSort(on.initial);
+	PrintTexto(&on);
 }
