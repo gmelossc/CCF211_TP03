@@ -1,7 +1,6 @@
 #ifndef TP3_LIB_H
 #define TP3_LIB_H
 
-#include "text.h"
 typedef struct ccel* Ponteiro;
 
 typedef struct ccel {
@@ -16,6 +15,8 @@ typedef struct{
 }Libery;
 
 void IniciaLibery(Libery *biblio);
+// Insere/Remove Libery são nomes ruins pois indicam
+// adição/remoção um tipo Libery, quando o que é adicionado é um tipo Text
 void InsereLibery(Libery *biblio,Text *texto);
 int RemoveLibery(Libery *biblio);
 void PrintLibery(Libery *biblio);

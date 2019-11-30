@@ -1,4 +1,4 @@
-#include "lib.h"
+#include "includes/lib.h"
 void IniciaLibery(Libery *biblio){
     biblio->initial=NULL;
     biblio->end=NULL;
@@ -38,7 +38,7 @@ void PrintLibery(Libery *biblio){
     aux=biblio->initial;
     printf("Biblioteca:\n");
     while(aux != NULL){
-        printf("[%d]*",contador);
+        printf("[%d] ",contador);
         PrintTexto(&aux->texto);
         aux=aux->prox;
         contador++;

@@ -3,6 +3,11 @@
 #include <time.h>
 #include "libword/encaWord.c"
 #include "libtext/text.c"
+#include "liblib/lib.c"
+
+void IniSeed(){
+	srand(time(NULL));
+}
 
 TWord geraPalavra(int max_size_pal){
 	TWord minhaWord;
@@ -18,7 +23,6 @@ TWord geraPalavra(int max_size_pal){
 }
 
 Text geraTexto(int size_texto,int max_size_pal){
-	srand(time(NULL));
 	Text meuTexto;
 	Inicia(&meuTexto);
 	for (int i = 0; i < size_texto; i++){
