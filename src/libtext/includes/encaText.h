@@ -1,5 +1,9 @@
 #ifndef TP3_EXECUTAVEL_TEXT_H
 #define TP3_EXECUTAVEL_TEXT_H
+<<<<<<< Updated upstream:src/libtext/includes/text.h
+=======
+#include "includes/encaWord.h"
+>>>>>>> Stashed changes:src/libtext/includes/encaText.h
 
 typedef struct cel* Apontador;
 

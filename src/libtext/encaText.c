@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:src/libtext/text.c
 #include "includes/text.h"
+=======
+#include "encaText.h"
+>>>>>>> Stashed changes:src/libtext/encaText.c
 
 void Inicia(Text *texto){
     texto->initial=NULL;
@@ -39,14 +43,23 @@ void PrintTexto(Text *texto){
     aux=texto->initial;
     printf("Texto:\n");
     while(aux != NULL){
-        if (contador>1){
-            PrintPal(&aux->word);
-        }
+        PrintPal(&aux->word);
+        printf(" ");
         aux=aux->prox;
         contador++;
     }
     printf("\n");
 }
 void TamanhoTexto(Text *texto){
+<<<<<<< Updated upstream:src/libtext/text.c
     printf("\nTamanho do texto:%d\n",texto->tamanhotexto);
 }
+=======
+<<<<<<< Updated upstream:src/libtext/text.c
+    printf("Tamanho do texto:%d",texto->tamanhotexto);
+}
+=======
+    printf("\nTamanho do texto:%d",texto->tamanhotexto);
+}
+>>>>>>> Stashed changes:src/libtext/encaText.c
+>>>>>>> Stashed changes:src/libtext/encaText.c

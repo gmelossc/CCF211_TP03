@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #ifndef TAWORD_H_
 #define TAWORD_H_
 
 #define MAXW 100
 
-typedef char Word;
 typedef int Size;
 
 typedef struct{
-  Word *word;
+  char *letters;
   Size size;
-}t_word;
+}Word;
 
 #endif
 
-void allocWord(Word **word);
-void initWord(t_word *W);
-int insertCharToWord(Word **word, char toAdd, int pos);
-void insertChar(t_word *W, char toAdd);
-void removeChar(t_word *W);
-int wordSize(t_word W);
-void printWord(t_word W);
+void allocWord(char **letters);
+void initWord(Word *W);
+int insertCharToWord(char **letters, char toAdd, int pos);
+void insertChar(Word *W, char toAdd);
+void removeChar(Word *W);
+int wordSize(Word W);
+void printWord(Word W);
+void freeWord(Word *W);
