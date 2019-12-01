@@ -35,19 +35,9 @@ Text geraTexto(int size_texto,int max_size_pal){
 	Text meuTexto;
 	Inicia(&meuTexto);
 	InsereTexto(&meuTexto,gambiarra());
-	for (int i = 0; i < rand() % size_texto+1; i++){
+	for (int i = 0; i < size_texto; i++){
 		TWord novaWord = geraPalavra(max_size_pal);
 		InsereTexto(&meuTexto,&novaWord);
 	}
 	return meuTexto;
-}
-
-Libery geraBiblio(int total_textos,int size_texto,int max_size_pal){
-	Libery myLib;
-	IniciaLibery(&myLib);
-	for (int i = 0; i < total_textos; i++){
-		Text novoTexto = geraTexto(size_texto,max_size_pal);
-		InsereLibery(&myLib,&novoTexto);
-	}
-	return myLib;
 }

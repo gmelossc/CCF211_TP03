@@ -57,7 +57,7 @@ void PrintPal(TWord *palavra){
     while (atualCel -> prox != NULL){
         printf("%c", atualCel -> letra);
         atualCel = atualCel -> prox;
-    } printf("%c ", atualCel -> letra);
+    } printf("%c\n", atualCel -> letra);
 }
 
 void PrintTam(TWord *palavra){
