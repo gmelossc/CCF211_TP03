@@ -42,7 +42,6 @@ void PrintLibery(Libery *biblio){
         PrintTexto(&aux->texto);
         aux=aux->prox;
         contador++;
-        printf("\n");
     }
 }
 void Tamanho_da_biblioteca(Libery *biblio){

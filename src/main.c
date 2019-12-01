@@ -1,8 +1,8 @@
 #include "gerarand.c"
-#include "textoEncaSelectionSort.c"
-#include "biblioEncaSelectionSort.c"
-#include "textoEncaQuickSort.c"
-#include "biblioEncaQuickSort.c"
+#include "libsort/textoEncaSelectionSort.c"
+#include "libsort/biblioEncaSelectionSort.c"
+#include "libsort/textoEncaQuickSort.c"
+#include "libsort/biblioEncaQuickSort.c"
 
 int main(){
 	IniSeed();// IniSeed TEM QUE ser chamada antes da criação de qualquer unidade pseudo-aleatória
