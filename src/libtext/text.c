@@ -37,7 +37,9 @@ void PrintTexto(Text *texto){
     int contador=1;
     Apontador aux;
     aux=texto->initial;
-    printf("Texto:\n");
+
+    printf("Texto:");
+    TamanhoTexto(texto);
     while(aux != NULL){
         if (contador>1){
             PrintPal(&aux->word);
@@ -45,8 +47,8 @@ void PrintTexto(Text *texto){
         aux=aux->prox;
         contador++;
     }
-    printf("\n");
+    printf("\n\n");
 }
 void TamanhoTexto(Text *texto){
-    printf("\nTamanho do texto:%d\n",texto->tamanhotexto);
+    printf("\nTamanho: %d palavras\n\n",texto->tamanhotexto-1);
 }
