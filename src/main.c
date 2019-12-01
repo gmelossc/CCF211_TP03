@@ -22,11 +22,11 @@ int main(){
 	PrintTexto(&t1);
 	encaQuickSort(t1.initial);
 	PrintTexto(&t1);
-	InsereLibery(&lib,&t1);
+	/*InsereLibery(&lib,&t1);
 	InsereLibery(&lib,&t2);
 	InsereLibery(&lib,&t3);
 	InsereLibery(&lib,&t4);
 	InsereLibery(&lib,&t5);
 	sLib.initial = encaBiblioSelectionSort(lib.initial);
-	//PrintLibery(&sLib);
+	//PrintLibery(&sLib);*/
 }
