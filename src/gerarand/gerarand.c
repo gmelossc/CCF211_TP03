@@ -23,6 +23,7 @@ Text geraTexto(int size_texto,int max_size_pal){
     }
     return meuTexto;
 }
+/*
 Libery geraBiblioteca(int tamanho_da_biblioteca,int max_size_text,int max_size_palavra){
     Libery biblio;
     IniciaLibery(&biblio);
@@ -31,4 +32,4 @@ Libery geraBiblioteca(int tamanho_da_biblioteca,int max_size_text,int max_size_p
         InsereLibery(&biblio,&novotexto);
     }
     return biblio;
-}
+}*/
