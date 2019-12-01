@@ -1,38 +1,43 @@
 #include "includes/aWord.h"
 
-void allocWord(Word **word){
-  (*word) = (Word*) malloc(MAXW*sizeof(Word));
+void allocWord(char **letters){
+  (*letters) = (char*) malloc(MAXW*sizeof(char));
 }
 
-void initWord(t_word *W){
-  allocWord(&(W->word));
+void initWord(Word *W){
+  allocWord(&(W->letters));
   W->size = 0;
 }
 
-int insertCharToWord(Word **word, char toAdd, int pos){
-  (*word)[pos] = toAdd;
-  (*word)[++pos] = '\0';
+int insertCharToWord(char **letters, char toAdd, int pos){
+  (*letters)[pos] = toAdd;
+  (*letters)[++pos] = '\0';
   return pos;
 }
 
 
-void insertChar(t_word *W, char toAdd){
-    W->size = insertCharToWord(&(W->word), toAdd, W->size);
+void insertChar(Word *W, char toAdd){
+    W->size = insertCharToWord(&(W->letters), toAdd, W->size);
 }
 
-void removeChar(t_word *W){
+void removeChar(Word *W){
   if(W->size > 0){
   W->size--;
-  W->word[W->size] = '\0';
+  W->letters[W->size] = '\0';
   }
   else printf("Não há caracteres para remover\n");
 }
 
-int wordSize(t_word W){
+int wordSize(Word W){
   return W.size;
 }
 
-void printWord(t_word W){
-  for(int i=0; W.word[i]!='\0' ; i++) printf("%c", W.word[i]);
+void printWord(Word W){
+  for(int i=0; W.letters[i]!='\0' ; i++) printf("%c", W.letters[i]);
   printf("\n");
+}
+
+void freeWord(Word *W){
+  W->size = 0;
+  free(W->letters);
 }
