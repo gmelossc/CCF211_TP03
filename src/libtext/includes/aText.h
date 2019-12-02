@@ -6,6 +6,7 @@
 typedef struct{
   Word *words;
   Size size;
+  Size capacity;
 }Text;
 
 #endif
@@ -15,4 +16,4 @@ void insertWord(Text *text);
 void removeWord(Text *text);
 void printText(Text text);
 int textSize(Text text);
-void freeText();
+void freeText(Text *text);
