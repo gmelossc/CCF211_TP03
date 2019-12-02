@@ -12,7 +12,7 @@ typedef struct{
 #endif
 
 void initText(aText *text, Size length);
-void insertWord(aText *text);
+void insertWord(aText *aText, Word toAdd);
 void removeWord(aText *text);
 void printText(aText text);
 int textSize(aText text);

@@ -9,19 +9,12 @@ void initText(aText *aText, Size length){
   aText->capacity = MAX[length-1];
 }
 
-void insertWord(aText *aText){
-  char toAdd;
-  while((scanf("%c", &toAdd) != EOF) &&(aText->size < aText->capacity)){
-    if(toAdd == ' '){
-      ++aText->size;
-      continue;
+void insertWord(aText *aText, Word toAdd){
+  for(int i =0; i<toAdd.size; i++)
+    if(aText->size < aText->capacity){  
+      insertChar(&(aText->words[aText->size]), toAdd.letters[i]);
     }
-    else if(toAdd == '\n'){
-      ++aText->size;
-      break;
-    }
-    insertChar(&(aText->words[aText->size]), toAdd);
-  }
+    ++aText->size;
 }
 
 void removeWord(aText *aText){

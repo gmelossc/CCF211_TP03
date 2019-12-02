@@ -72,5 +72,5 @@ Tcel * textoEncaQuickSort(Tcel * list, int * comparar)
         current_node = prox_node;
     }
 
-    return textoJoin(textoEncaQuickSort(left_sub_list), pivot, textoEncaQuickSort(right_sub_list));
+    return textoJoin(textoEncaQuickSort(left_sub_list, comparar), pivot, textoEncaQuickSort(right_sub_list,comparar));
 }

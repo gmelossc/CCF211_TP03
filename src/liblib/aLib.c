@@ -7,8 +7,8 @@ void initLib(Library *library, Size length){
   library->size = MAX[length - 1];
 }
 
-void insertText(Library *library){
-  for(int i =0; i<library->size; i++) insertWord(&(library->texts[i]));
+void insertText(Library *library, aText toAdd, int thatText){
+  for(int i =0; i<toAdd.size; i++) insertWord(&(library->texts[thatText]), toAdd.words[i]);
 }
 
 void removeText(Library *library){

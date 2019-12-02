@@ -28,7 +28,7 @@ Text makeTextoEnca(){
         PrintTexto(&newTexto);
     }
     else if (choice3 == 2){
-        textoEncaQuickSort(newTexto.initial);
+        textoEncaQuickSort(newTexto.initial, &comps);
         PrintTexto(&newTexto);
     }
     printf("Ordenado em %ld segundos\n", time(NULL)-start);
@@ -37,7 +37,7 @@ Text makeTextoEnca(){
 }
 
 void makeTextoVetor(){
-
+    
 }
 
 Libery makeBiblioEnca(){

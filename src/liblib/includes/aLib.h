@@ -10,7 +10,7 @@ typedef struct{
 #endif
 
 void initLib(Library *library, Size length);
-void insertText(Library *library);
+void insertText(Library *library, aText toAdd, int thatText);
 void removeText(Library *library);
 void printLib(Library library);
 int libSize(Library library);
