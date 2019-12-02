@@ -45,8 +45,9 @@ int TextSize(aText aText){
 }
 
 void freeText(aText *aText){
-  aText->size = 0;
-  for(int i =0; i<aText->size; i++)
+  for(int i =0; i<aText->capacity; i++)
     freeWord(&(aText->words[i]));
   free(aText->words);
+  aText->size = 0;
+  aText->capacity = 0;
 }
