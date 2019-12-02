@@ -41,7 +41,8 @@ void makeTextoVetor(){
 Libery makeBiblioEnca(){
     int choice1,choice2,choice3,choice4;
     Libery newBib,extraBib;
-    long int start;
+    long int start, comp;
+    long int * compara = 0;
 
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
@@ -57,7 +58,7 @@ Libery makeBiblioEnca(){
     scanf("%d",&choice4);
     start = time(NULL);
     if (choice4 == 1){
-        extraBib.initial = biblioEncaSelectionSort(newBib.initial);
+        extraBib.initial = biblioEncaSelectionSort(newBib.initial,compara);
         PrintLibery(&extraBib);
     }
     else if (choice4 == 2){

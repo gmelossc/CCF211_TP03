@@ -1,4 +1,4 @@
-Tccel* biblioEncaSelectionSort(Tccel* head){ 
+Tccel* biblioEncaSelectionSort(Tccel* head, long int comparar){ 
     Tccel *a, *b, *c, *d, *r;
   
     a = b = head; 
@@ -12,13 +12,13 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
         while (d) { 
   
             if (b->texto.tamanhotexto > d->texto.tamanhotexto) { 
-  
+                comparar++;
                 // If d appears immediately after b 
                 if (b->prox == d) { 
-  
+                    comparar++;
                     // Case 1: b is the head of the linked list 
                     if (b == head) { 
-  
+                        comparar++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -40,7 +40,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
   
                     // Case 2: b is not the head of the linked list 
                     else { 
-  
+                        comparar++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -62,10 +62,10 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
                 // If b and d have some non-zero 
                 // number of Tcels in between them 
                 else { 
-  
+                    comparar++;
                     // Case 3: b is the head of the linked list 
                     if (b == head) { 
-  
+                        comparar++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -89,7 +89,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
   
                     // Case 4: b is not the head of the linked list 
                     else { 
-  
+                        comparar++; 
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -111,7 +111,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
                 } 
             } 
             else { 
-  
+                comparar++; 
                 // Update c and skip to the prox element 
                 // as it is already in order 
                 c = d; 

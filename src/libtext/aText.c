@@ -1,52 +1,52 @@
-#include "includes/aText.h"
+#include "includes/aaText.h"
 
-void initText(Text *text, Size length){
+void initaText(aText *aText, Size length){
   Size MAX[] = {10, 100, 1000, 10000, 100000};
-  (text->words) = (Word*) malloc(MAX[length-1]*sizeof(Word));
+  (aText->words) = (Word*) malloc(MAX[length-1]*sizeof(Word));
 
-  for(int i = 0; i< MAX[length - 1]; i++) initWord(&(text->words[i]));
-  text->size =0;
-  text->capacity = MAX[length-1];
+  for(int i = 0; i< MAX[length - 1]; i++) initWord(&(aText->words[i]));
+  aText->size =0;
+  aText->capacity = MAX[length-1];
 }
 
-void insertWord(Text *text){
+void insertWord(aText *aText){
   char toAdd;
-  while((scanf("%c", &toAdd) != EOF) &&(text->size < text->capacity)){
+  while((scanf("%c", &toAdd) != EOF) &&(aText->size < aText->capacity)){
     if(toAdd == ' '){
-      ++text->size;
+      ++aText->size;
       continue;
     }
     else if(toAdd == '\n'){
-      ++text->size;
+      ++aText->size;
       break;
     }
-    insertChar(&(text->words[text->size]), toAdd);
+    insertChar(&(aText->words[aText->size]), toAdd);
   }
 }
 
-void removeWord(Text *text){
-  for(int i =0; i<text->words[text->size - 1].size; i++) removeChar(&(text->words[text->size - 1]));
-  freeWord(&(text->words[text->size - 1]));
-  --text->size;
+void removeWord(aText *aText){
+  for(int i =0; i<aText->words[aText->size - 1].size; i++) removeChar(&(aText->words[aText->size - 1]));
+  freeWord(&(aText->words[aText->size - 1]));
+  --aText->size;
 }
 
-void printText(Text text){
-  for(int i =0; i< text.size; ++i){
-    for(int j = 0; text.words[i].letters[j] != '\0'; ++j){
-      printf("%c", text.words[i].letters[j]);
+void printaText(aText aText){
+  for(int i =0; i< aText.size; ++i){
+    for(int j = 0; aText.words[i].letters[j] != '\0'; ++j){
+      printf("%c", aText.words[i].letters[j]);
     }
     printf(" ");
   }
   printf("\n");
 }
 
-int textSize(Text text){
-  return text.size;
+int aTextSize(aText aText){
+  return aText.size;
 }
 
-void freeText(Text *text){
-  text->size = 0;
-  for(int i =0; i<text->size; i++)
-    freeWord(&(text->words[i]));
-  free(text->words);
+void freeaText(aText *aText){
+  aText->size = 0;
+  for(int i =0; i<aText->size; i++)
+    freeWord(&(aText->words[i]));
+  free(aText->words);
 }

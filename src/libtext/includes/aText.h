@@ -7,13 +7,13 @@ typedef struct{
   Word *words;
   Size size;
   Size capacity;
-}Text;
+}aText;
 
 #endif
 
-void initText(Text *text, Size length);
-void insertWord(Text *text);
-void removeWord(Text *text);
-void printText(Text text);
-int textSize(Text text);
-void freeText(Text *text);
+void initText(aText *text, Size length);
+void insertWord(aText *text);
+void removeWord(aText *text);
+void printText(aText text);
+int textSize(aText text);
+void freeText(aText *text);

@@ -3,7 +3,8 @@
 #include <time.h>
 #include "libword/encaWord.c"
 #include "libtext/encaText.c"
-#include "liblib/lib.c"
+#include "liblib/encaLib.c"
+#include "liblib/aLib.c"
 
 void IniSeed(){
 	srand(time(NULL));
