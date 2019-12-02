@@ -38,9 +38,12 @@ Tcel * textoJoin(Tcel* left_list, Tcel * pivot, Tcel * right_list)
     return left_list;
 }
 
-Tcel * textoEncaQuickSort(Tcel * list)
+Tcel * textoEncaQuickSort(Tcel * list, int * comparar)
 {
-    if (list == NULL || list->prox == NULL) return list;
+    if (list == NULL || list->prox == NULL){
+        (*comparar)++;
+        return list;
+    }    
 
     Tcel *pivot = textoFindRandomPivotNode(list);
 
@@ -52,13 +55,16 @@ Tcel * textoEncaQuickSort(Tcel * list)
 
         if (current_node != pivot)
         {
+            (*comparar)++;
             if (current_node->word.inicio->letra <= pivot->word.inicio->letra)
             {
+                (*comparar)++;
                 current_node->prox = left_sub_list;
                 left_sub_list = current_node;
             }
             else
             {
+                (*comparar)++;
                 current_node->prox = right_sub_list;
                 right_sub_list = current_node;
             }

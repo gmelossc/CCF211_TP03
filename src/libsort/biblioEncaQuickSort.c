@@ -38,9 +38,12 @@ Tccel * biblioJoin(Tccel* left_list, Tccel * pivot, Tccel * right_list)
     return left_list;
 }
 
-Tccel * biblioEncaQuickSort(Tccel * list)
+Tccel * biblioEncaQuickSort(Tccel * list, int * comparar)
 {
-    if (list == NULL || list->prox == NULL) return list;
+    if (list == NULL || list->prox == NULL){
+        (*comparar)++;
+        return list;
+    }
 
     Tccel *pivot = biblioFindRandomPivotNode(list);
 
@@ -52,13 +55,16 @@ Tccel * biblioEncaQuickSort(Tccel * list)
 
         if (current_node != pivot)
         {
+            (*comparar)++;
             if (current_node->texto.tamanhotexto <= pivot->texto.tamanhotexto)
             {
+                (*comparar)++;
                 current_node->prox = left_sub_list;
                 left_sub_list = current_node;
             }
             else
             {
+                (*comparar)++;
                 current_node->prox = right_sub_list;
                 right_sub_list = current_node;
             }
@@ -66,5 +72,5 @@ Tccel * biblioEncaQuickSort(Tccel * list)
         current_node = prox_node;
     }
 
-    return biblioJoin(biblioEncaQuickSort(left_sub_list), pivot, biblioEncaQuickSort(right_sub_list));
+    return biblioJoin(biblioEncaQuickSort(left_sub_list, comparar), pivot, biblioEncaQuickSort(right_sub_list, comparar));
 }

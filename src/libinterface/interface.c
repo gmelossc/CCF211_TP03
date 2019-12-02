@@ -6,6 +6,7 @@
 
 Text makeTextoEnca(){
     int choice1,choice2,choice3;
+    int comps=0;
     Text newTexto;
     long int start;
 
@@ -23,7 +24,7 @@ Text makeTextoEnca(){
     scanf("%d",&choice3);
     start = time(NULL);
     if (choice3 == 1){
-        textoEncaSelectionSort(newTexto.initial);
+        textoEncaSelectionSort(newTexto.initial,&comps);
         PrintTexto(&newTexto);
     }
     else if (choice3 == 2){
@@ -31,6 +32,7 @@ Text makeTextoEnca(){
         PrintTexto(&newTexto);
     }
     printf("Ordenado em %ld segundos\n", time(NULL)-start);
+    printf("Total de comparações:%i\n", comps);
     return newTexto;
 }
 
@@ -40,16 +42,17 @@ void makeTextoVetor(){
 
 Libery makeBiblioEnca(){
     int choice1,choice2,choice3,choice4;
+    int comps=0;
     Libery newBib,extraBib;
     long int start;
 
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
-    printf("Digite o número de textos de sua biblioteca:\n>");
+    printf("Digite o número de textos de sua biblioteca:\n> ");
     scanf("%d",&choice1);
-    printf("Digite o número de palavras dos textos da biblioteca:\n>");
+    printf("Digite o número de palavras dos textos da biblioteca:\n> ");
     scanf("%d",&choice2);
-    printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n>");
+    printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n> ");
     scanf("%d",&choice3);
     newBib = geraBiblio(choice1,choice2,choice3);
     PrintLibery(&newBib);
@@ -57,14 +60,15 @@ Libery makeBiblioEnca(){
     scanf("%d",&choice4);
     start = time(NULL);
     if (choice4 == 1){
-        extraBib.initial = biblioEncaSelectionSort(newBib.initial);
+        extraBib.initial = biblioEncaSelectionSort(newBib.initial,&comps);
         PrintLibery(&extraBib);
     }
     else if (choice4 == 2){
-        extraBib.initial = biblioEncaQuickSort(newBib.initial);
+        extraBib.initial = biblioEncaQuickSort(newBib.initial,&comps);
         PrintLibery(&extraBib);
     }
     printf("Ordenado em %ld segundos\n", time(NULL)-start);
+    printf("Total de comparações:%i\n", comps);
     return newBib;
 }
 

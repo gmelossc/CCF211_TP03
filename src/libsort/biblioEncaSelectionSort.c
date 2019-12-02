@@ -1,6 +1,5 @@
-Tccel* biblioEncaSelectionSort(Tccel* head){ 
+Tccel* biblioEncaSelectionSort(Tccel* head, int * comparar){ 
     Tccel *a, *b, *c, *d, *r;
-    int comparar = 0;
     a = b = head; 
   
     // While b is not the last Tcel 
@@ -12,13 +11,13 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
         while (d) { 
   
             if (b->texto.tamanhotexto > d->texto.tamanhotexto) { 
-                comparar++;
+                (*comparar)++;
                 // If d appears immediately after b 
                 if (b->prox == d) { 
-                    comparar++;
+                    (*comparar)++;
                     // Case 1: b is the head of the linked list 
                     if (b == head) { 
-                        comparar++;
+                        (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -40,7 +39,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
   
                     // Case 2: b is not the head of the linked list 
                     else { 
-                        comparar++;
+                        (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -62,10 +61,10 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
                 // If b and d have some non-zero 
                 // number of Tcels in between them 
                 else { 
-                    comparar++;
+                    (*comparar)++;
                     // Case 3: b is the head of the linked list 
                     if (b == head) { 
-                        comparar++;
+                        (*comparar)++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -89,7 +88,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
   
                     // Case 4: b is not the head of the linked list 
                     else { 
-                        comparar++; 
+                        (*comparar)++; 
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -111,7 +110,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
                 } 
             } 
             else { 
-                comparar++; 
+                (*comparar)++; 
                 // Update c and skip to the prox element 
                 // as it is already in order 
                 c = d; 
@@ -121,7 +120,6 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
   
         a = b; 
         b = b->prox; 
-    } 
-    printf("Total de comparações: %d\n", comparar);
+    }
     return head;
 }

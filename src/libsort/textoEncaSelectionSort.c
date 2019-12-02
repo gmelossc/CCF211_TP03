@@ -1,5 +1,5 @@
-Tcel* textoEncaSelectionSort(Tcel *head){
-    Tcel *a, *b, *c, *d, *r; 
+Tcel* textoEncaSelectionSort(Tcel *head, int * comparar){
+    Tcel *a, *b, *c, *d, *r;
     a = b = head; 
   
     // While b is not the last Tcel 
@@ -11,13 +11,13 @@ Tcel* textoEncaSelectionSort(Tcel *head){
         while (d) { 
   
             if (b->word.inicio->letra > d->word.inicio->letra) { 
-  
+                (*comparar)++;
                 // If d appears immediately after b 
                 if (b->prox == d) { 
-  
+                    (*comparar)++;
                     // Case 1: b is the head of the linked list 
                     if (b == head) { 
-  
+                        (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -39,7 +39,7 @@ Tcel* textoEncaSelectionSort(Tcel *head){
   
                     // Case 2: b is not the head of the linked list 
                     else { 
-  
+                        (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
                         d->prox = b; 
@@ -61,10 +61,10 @@ Tcel* textoEncaSelectionSort(Tcel *head){
                 // If b and d have some non-zero 
                 // number of Tcels in between them 
                 else { 
-  
+                    (*comparar)++;
                     // Case 3: b is the head of the linked list 
                     if (b == head) { 
-  
+                        (*comparar)++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -88,7 +88,7 @@ Tcel* textoEncaSelectionSort(Tcel *head){
   
                     // Case 4: b is not the head of the linked list 
                     else { 
-  
+                        (*comparar)++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
                         b->prox = d->prox; 
@@ -110,7 +110,7 @@ Tcel* textoEncaSelectionSort(Tcel *head){
                 } 
             } 
             else { 
-  
+                (*comparar)++;
                 // Update c and skip to the prox element 
                 // as it is already in order 
                 c = d; 
@@ -120,7 +120,6 @@ Tcel* textoEncaSelectionSort(Tcel *head){
   
         a = b; 
         b = b->prox; 
-    } 
-  
+    }
     return head; 
 }
