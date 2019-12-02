@@ -1,6 +1,6 @@
-#include "includes/aaText.h"
+#include "includes/aText.h"
 
-void initaText(aText *aText, Size length){
+void initText(aText *aText, Size length){
   Size MAX[] = {10, 100, 1000, 10000, 100000};
   (aText->words) = (Word*) malloc(MAX[length-1]*sizeof(Word));
 
@@ -30,7 +30,7 @@ void removeWord(aText *aText){
   --aText->size;
 }
 
-void printaText(aText aText){
+void printText(aText aText){
   for(int i =0; i< aText.size; ++i){
     for(int j = 0; aText.words[i].letters[j] != '\0'; ++j){
       printf("%c", aText.words[i].letters[j]);
@@ -40,11 +40,11 @@ void printaText(aText aText){
   printf("\n");
 }
 
-int aTextSize(aText aText){
+int TextSize(aText aText){
   return aText.size;
 }
 
-void freeaText(aText *aText){
+void freeText(aText *aText){
   aText->size = 0;
   for(int i =0; i<aText->size; i++)
     freeWord(&(aText->words[i]));

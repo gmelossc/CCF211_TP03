@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include "libword/encaWord.c"
+#include "libword/aWord.c"
 #include "libtext/encaText.c"
+#include "libtext/aText.c"
 #include "liblib/encaLib.c"
 #include "liblib/aLib.c"
 

@@ -3,7 +3,7 @@
 #define TALIB_H_
 
 typedef struct{
-  Text *texts;
+  aText *texts;
   Size size;
 }Library;
 

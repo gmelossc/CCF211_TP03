@@ -1,4 +1,4 @@
-Tccel* biblioEncaSelectionSort(Tccel* head, long int comparar){ 
+Tccel* biblioEncaSelectionSort(Tccel* head, long int * comparar){ 
     Tccel *a, *b, *c, *d, *r;
   
     a = b = head; 

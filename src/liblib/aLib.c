@@ -2,7 +2,7 @@
 
 void initLib(Library *library, Size length){
   Size MAX[] = {2, 100, 100000};
-  library->texts = (Text*) malloc(MAX[length-1]*sizeof(Text));
+  library->texts = (aText*) malloc(MAX[length-1]*sizeof(aText));
   for(int i =0; i< MAX[length - 1]; i++) initText(&(library->texts[i]), 1);
   library->size = MAX[length - 1];
 }

@@ -42,7 +42,7 @@ Libery makeBiblioEnca(){
     int choice1,choice2,choice3,choice4;
     Libery newBib,extraBib;
     long int start, comp;
-    long int * compara = 0;
+    long int * compara = &comp;
 
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
