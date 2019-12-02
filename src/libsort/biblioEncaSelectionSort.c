@@ -1,5 +1,5 @@
 Tccel* biblioEncaSelectionSort(Tccel* head){ 
-    Tccel *a, *b, *c, *d, *r; 
+    Tccel *a, *b, *c, *d, *r;
   
     a = b = head; 
   
@@ -122,6 +122,5 @@ Tccel* biblioEncaSelectionSort(Tccel* head){
         a = b; 
         b = b->prox; 
     } 
-  
     return head; 
 }

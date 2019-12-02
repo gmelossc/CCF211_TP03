@@ -7,6 +7,8 @@
 Text makeTextoEnca(){
     int choice1,choice2,choice3;
     Text newTexto;
+    long int start;
+
     system("clear");
     printf("CRIANDO TEXTO ENCADEADO\n\n");
     printf("Digite o número máximo de palavras do texto:\n> ");
@@ -19,6 +21,7 @@ Text makeTextoEnca(){
     PrintTexto(&newTexto);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n> ");
     scanf("%d",&choice3);
+    start = time(NULL);
     if (choice3 == 1){
         textoEncaSelectionSort(newTexto.initial);
         PrintTexto(&newTexto);
@@ -27,7 +30,7 @@ Text makeTextoEnca(){
         textoEncaQuickSort(newTexto.initial);
         PrintTexto(&newTexto);
     }
-
+    printf("Ordenado em %ld segundos\n", time(NULL)-start);
     return newTexto;
 }
 
@@ -38,6 +41,8 @@ void makeTextoVetor(){
 Libery makeBiblioEnca(){
     int choice1,choice2,choice3,choice4;
     Libery newBib,extraBib;
+    long int start;
+
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
     printf("Digite o número de textos de sua biblioteca:\n>");
@@ -50,6 +55,7 @@ Libery makeBiblioEnca(){
     PrintLibery(&newBib);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n> ");
     scanf("%d",&choice4);
+    start = time(NULL);
     if (choice4 == 1){
         extraBib.initial = biblioEncaSelectionSort(newBib.initial);
         PrintLibery(&extraBib);
@@ -58,6 +64,7 @@ Libery makeBiblioEnca(){
         extraBib.initial = biblioEncaQuickSort(newBib.initial);
         PrintLibery(&extraBib);
     }
+    printf("Ordenado em %ld segundos\n", time(NULL)-start);
     return newBib;
 }
 

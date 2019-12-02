@@ -1,6 +1,5 @@
 Tcel* textoEncaSelectionSort(Tcel *head){
     Tcel *a, *b, *c, *d, *r; 
-  
     a = b = head; 
   
     // While b is not the last Tcel 
