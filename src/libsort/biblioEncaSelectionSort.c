@@ -1,6 +1,6 @@
-Tccel* biblioEncaSelectionSort(Tccel* head, long int * comparar){ 
+Tccel* biblioEncaSelectionSort(Tccel* head){ 
     Tccel *a, *b, *c, *d, *r;
-  
+    int comparar = 0;
     a = b = head; 
   
     // While b is not the last Tcel 
@@ -122,5 +122,6 @@ Tccel* biblioEncaSelectionSort(Tccel* head, long int * comparar){
         a = b; 
         b = b->prox; 
     } 
-    return head; 
+    printf("Total de comparações: %d\n", comparar);
+    return head;
 }
