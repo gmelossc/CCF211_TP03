@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "libword/encaWord.c"
-#include "libtext/text.c"
+#include "libtext/encaText.c"
 #include "liblib/lib.c"
 
 void IniSeed(){
