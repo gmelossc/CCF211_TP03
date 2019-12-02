@@ -1,16 +1,13 @@
-#include "gerarand.c"
-#include "libsort/textoEncaSelectionSort.c"
-#include "libsort/biblioEncaSelectionSort.c"
-#include "libsort/textoEncaQuickSort.c"
-#include "libsort/biblioEncaQuickSort.c"
+#include "libinterface/interface.c"
 
 int main(){
-	IniSeed();// IniSeed TEM QUE ser chamada antes da criação de qualquer unidade pseudo-aleatória
+	Interface();
+	/*IniSeed();// IniSeed TEM QUE ser chamada antes da criação de qualquer unidade pseudo-aleatória
 	/*Text on;
 	Inicia(&on);
 	on = geraTexto(10000,10);
 	on.initial = textoEncaSelectionSort(on.initial);
-	PrintTexto(&on);*/
+	PrintTexto(&on);
 	Libery lib, sLib;
 	Text t1,t2,t3,t4,t5;
 	IniciaLibery(&lib);
@@ -22,7 +19,7 @@ int main(){
 	t5 = geraTexto(2,10);
 	/*PrintTexto(&t1);
 	textoEncaQuickSort(t1.initial);
-	PrintTexto(&t1);*/
+	PrintTexto(&t1);
 	InsereLibery(&lib,&t1);
 	InsereLibery(&lib,&t2);
 	InsereLibery(&lib,&t3);
@@ -30,5 +27,5 @@ int main(){
 	InsereLibery(&lib,&t5);
 	//sLib.initial = biblioEncaSelectionSort(lib.initial);
 	sLib.initial = biblioEncaQuickSort(lib.initial);
-	PrintLibery(&sLib);
+	PrintLibery(&sLib);*/
 }
