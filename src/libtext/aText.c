@@ -1,7 +1,7 @@
 #include "includes/aText.h"
 
 void initText(Text *text, Size length){
-  Size MAX[] = {100, 1000, 10000, 100000};
+  Size MAX[] = {10, 100, 1000, 10000, 100000};
   (text->words) = (Word*) malloc(MAX[length-1]*sizeof(Word));
 
   for(int i = 0; i< MAX[length - 1]; i++) initWord(&(text->words[i]));

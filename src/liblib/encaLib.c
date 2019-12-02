@@ -1,4 +1,4 @@
-#include "includes/lib.h"
+#include "includes/encaLib.h"
 void IniciaLibery(Libery *biblio){
     biblio->initial=NULL;
     biblio->end=NULL;
