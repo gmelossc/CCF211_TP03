@@ -12,7 +12,7 @@ void IniSeed(){
 	srand(time(NULL));
 }
 
-TWord *gambiarra(){
+TWord *auxFunction(){
 	TWord myword;
 	TWord *pword;
 	Inicializa(&myword);
@@ -37,7 +37,7 @@ TWord geraPalavra(int max_size_pal){
 Text geraTexto(int max_size_texto,int max_size_pal,int min_size_texto){
 	Text meuTexto;
 	Inicia(&meuTexto);
-	InsereTexto(&meuTexto,gambiarra());
+	InsereTexto(&meuTexto,auxFunction());
 	for (int i = 0; i < rand() % (max_size_texto+1-min_size_texto)+min_size_texto; i++){
 		TWord novaWord = geraPalavra(max_size_pal);
 		InsereTexto(&meuTexto,&novaWord);
