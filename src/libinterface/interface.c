@@ -17,6 +17,9 @@ Text makeTextoEnca(){
     int movs=0;
 =======
     int choice1,choice2,choice3;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     Text newTexto;
     double time_spent=0.0;
@@ -35,10 +38,14 @@ Text makeTextoEnca(){
     scanf("%d",&choice3);
     if (choice3 == 1){
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         clock_t begin = clock();
         textoEncaSelectionSort(newTexto.initial,&comps);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
+=======
+        textoEncaSelectionSort(newTexto.initial);
+>>>>>>> Stashed changes
 =======
         textoEncaSelectionSort(newTexto.initial);
 >>>>>>> Stashed changes
@@ -75,6 +82,9 @@ Text makeTextoEnca(){
 
 =======
     printf("Ordenado em %ld segundos\n", time(NULL)-start);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     return newTexto;
 }
@@ -176,6 +186,9 @@ Libery makeBiblioEnca(){
     printf("Digite o número de textos de sua biblioteca:\n>");
     scanf("%d",&choice1);
     printf("Digite o número de palavras dos textos da biblioteca:\n>");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     scanf("%d",&choice2);
     printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n>");
@@ -185,6 +198,7 @@ Libery makeBiblioEnca(){
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice4);
     if (choice4 == 1){
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         clock_t begin = clock();
         extraBib1.initial = biblioEncaSelectionSort(newBib.initial,&comps,&movs);
@@ -219,6 +233,8 @@ Libery makeBiblioEnca(){
         printf("NUMERO DE COMPARAÇÕES DO QUICKSORT: %lld\n", comps);
     }
 =======
+=======
+>>>>>>> Stashed changes
         extraBib.initial = biblioEncaSelectionSort(newBib.initial);
         PrintLibery(&extraBib);
     }
@@ -227,6 +243,9 @@ Libery makeBiblioEnca(){
         PrintLibery(&extraBib);
     }
     printf("Ordenado em %ld segundos\n", time(NULL)-start);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     return newBib;
 }
