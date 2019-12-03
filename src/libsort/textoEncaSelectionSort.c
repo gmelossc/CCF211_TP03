@@ -1,4 +1,4 @@
-Tcel* textoEncaSelectionSort(Tcel *head, int * comparar){
+Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
     Tcel *a, *b, *c, *d, *r;
     a = b = head; 
   

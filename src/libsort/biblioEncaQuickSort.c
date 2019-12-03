@@ -38,7 +38,7 @@ Tccel * biblioJoin(Tccel* left_list, Tccel * pivot, Tccel * right_list)
     return left_list;
 }
 
-Tccel * biblioEncaQuickSort(Tccel * list, int * comparar)
+Tccel * biblioEncaQuickSort(Tccel * list, long long int * comparar)
 {
     if (list == NULL || list->prox == NULL){
         (*comparar)++;

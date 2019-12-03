@@ -1,4 +1,4 @@
-Tccel* biblioEncaSelectionSort(Tccel* head, int * comparar){ 
+Tccel* biblioEncaSelectionSort(Tccel* head, long long int * comparar, int * movimentar){ 
     Tccel *a, *b, *c, *d, *r;
     a = b = head; 
   
@@ -6,7 +6,7 @@ Tccel* biblioEncaSelectionSort(Tccel* head, int * comparar){
     while (b->prox) { 
   
         c = d = b->prox; 
-  
+
         // While d is pointing to a valid Tcel 
         while (d) { 
   

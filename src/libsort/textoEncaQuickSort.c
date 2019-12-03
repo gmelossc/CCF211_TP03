@@ -38,7 +38,7 @@ Tcel * textoJoin(Tcel* left_list, Tcel * pivot, Tcel * right_list)
     return left_list;
 }
 
-Tcel * textoEncaQuickSort(Tcel * list, int * comparar)
+Tcel * textoEncaQuickSort(Tcel * list, long long int * comparar)
 {
     if (list == NULL || list->prox == NULL){
         (*comparar)++;

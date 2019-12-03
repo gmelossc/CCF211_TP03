@@ -1,8 +1,8 @@
 #include "libinterface/interface.c"
 
 int main(){
-	//Interface();
-	IniSeed();
+	Interface();
+	/*IniSeed();
 	aText novot; 
 	Word novaw;
 	Library noval;
@@ -12,5 +12,5 @@ int main(){
 	//printWord(novaw);
 	//printText(novot);
 	printf("Lib:\n");
-	printLib(noval);
+	printLib(noval);*/
 }
