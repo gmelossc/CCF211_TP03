@@ -11,9 +11,13 @@
 #include <unistd.h>
 
 Text makeTextoEnca(){
+<<<<<<< Updated upstream
     int choice1,choice2,choice3,choice4;
     long long int comps=0;
     int movs=0;
+=======
+    int choice1,choice2,choice3;
+>>>>>>> Stashed changes
     Text newTexto;
     double time_spent=0.0;
 
@@ -30,10 +34,14 @@ Text makeTextoEnca(){
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice3);
     if (choice3 == 1){
+<<<<<<< Updated upstream
         clock_t begin = clock();
         textoEncaSelectionSort(newTexto.initial,&comps);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
+=======
+        textoEncaSelectionSort(newTexto.initial);
+>>>>>>> Stashed changes
         PrintTexto(&newTexto);
         printf("\nTEMPO DE EXECUÇÃO: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES: %lld\n", comps);
@@ -63,7 +71,11 @@ Text makeTextoEnca(){
         printf("\nTEMPO DE EXECUÇÃO DO QUICK SORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO QUICK SORT: %lld\n", comps);
     }
+<<<<<<< Updated upstream
 
+=======
+    printf("Ordenado em %ld segundos\n", time(NULL)-start);
+>>>>>>> Stashed changes
     return newTexto;
 }
 
@@ -142,6 +154,7 @@ void makeTextoVetor(){
 }
 
 Libery makeBiblioEnca(){
+<<<<<<< Updated upstream
     int choice1,choice2,choice3,choice4,choice5;
     long long int comps=0;
     int movs=0;
@@ -153,14 +166,26 @@ Libery makeBiblioEnca(){
     printf("Digite o número máximo e o número mínimo de textos de sua biblioteca:\n> ");
     scanf("%d %d",&choice1,&choice5);
     printf("Digite o número de palavras dos textos da biblioteca:\n> ");
+=======
+    int choice1,choice2,choice3,choice4;
+    Libery newBib,extraBib;
+    long int start;
+
+    system("clear");
+    printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
+    printf("Digite o número de textos de sua biblioteca:\n>");
+    scanf("%d",&choice1);
+    printf("Digite o número de palavras dos textos da biblioteca:\n>");
+>>>>>>> Stashed changes
     scanf("%d",&choice2);
-    printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n> ");
+    printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n>");
     scanf("%d",&choice3);
     newBib = geraBiblio(choice1,choice2,choice3,choice5);
     PrintLibery(&newBib);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice4);
     if (choice4 == 1){
+<<<<<<< Updated upstream
         clock_t begin = clock();
         extraBib1.initial = biblioEncaSelectionSort(newBib.initial,&comps,&movs);
         clock_t end = clock();
@@ -193,6 +218,16 @@ Libery makeBiblioEnca(){
         printf("\nTEMPO DE EXECUÇÃO DO QUICKSORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO QUICKSORT: %lld\n", comps);
     }
+=======
+        extraBib.initial = biblioEncaSelectionSort(newBib.initial);
+        PrintLibery(&extraBib);
+    }
+    else if (choice4 == 2){
+        extraBib.initial = biblioEncaQuickSort(newBib.initial);
+        PrintLibery(&extraBib);
+    }
+    printf("Ordenado em %ld segundos\n", time(NULL)-start);
+>>>>>>> Stashed changes
     return newBib;
 }
 
@@ -300,6 +335,7 @@ void getTipoBiblio(){
 }
 
 void Interface(){
+  Library library;
     IniSeed();// IniSeed TEM QUE ser chamada antes da criação de qualquer unidade pseudo-aleatória
     int choice;
     system("clear");
