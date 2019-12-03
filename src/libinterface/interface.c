@@ -11,7 +11,7 @@
 #include <unistd.h>
 
 Text makeTextoEnca(){
-    int choice1,choice2,choice3;
+    int choice1,choice2,choice3,choice4;
     long long int comps=0;
     int movs=0;
     Text newTexto;
@@ -19,12 +19,12 @@ Text makeTextoEnca(){
 
     system("clear");
     printf("CRIANDO TEXTO ENCADEADO\n\n");
-    printf("Digite o número máximo de palavras do texto:\n> ");
-    scanf("%d",&choice1);
+    printf("Digite o número máximo e o número mínimo de palavras do texto:\n> ");
+    scanf("%d %d",&choice1, &choice4);
     printf("Digite o número máximo de caracteres das palavras do texto:\n> ");
     scanf("%d",&choice2);
     system("clear");
-    newTexto = geraTexto(choice1,choice2);
+    newTexto = geraTexto(choice1,choice2,choice4);
     printf("TEXTO CRIADO\n\n");
     PrintTexto(&newTexto);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
@@ -68,7 +68,7 @@ Text makeTextoEnca(){
 }
 
 void makeTextoVetor(){
-    int choice1, choice2; 
+    int choice1, choice2, choice3; 
     long long comps, moves;
     aText newTexto;
     double time_spent;
@@ -81,8 +81,10 @@ void makeTextoVetor(){
     printf("3 - 10000\n"); 
     printf("4 - 100000\n"); 
     printf("> ");
-    scanf("%d",&choice1); 
-    newTexto = geraTextoVet(choice1);
+    scanf("%d",&choice1);
+    printf("Digite o número mínimo de palavras do texto:\n> ");
+    scanf("%d",&choice3);
+    newTexto = geraTextoVet(choice1,choice3);
     printf("TEXTO CRIADO\n\n");
     printText(newTexto);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
@@ -140,7 +142,7 @@ void makeTextoVetor(){
 }
 
 Libery makeBiblioEnca(){
-    int choice1,choice2,choice3,choice4;
+    int choice1,choice2,choice3,choice4,choice5;
     long long int comps=0;
     int movs=0;
     Libery newBib,extraBib1,extraBib2;
@@ -148,13 +150,13 @@ Libery makeBiblioEnca(){
 
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
-    printf("Digite o número de textos de sua biblioteca:\n> ");
-    scanf("%d",&choice1);
+    printf("Digite o número máximo e o número mínimo de textos de sua biblioteca:\n> ");
+    scanf("%d %d",&choice1,&choice5);
     printf("Digite o número de palavras dos textos da biblioteca:\n> ");
     scanf("%d",&choice2);
     printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n> ");
     scanf("%d",&choice3);
-    newBib = geraBiblio(choice1,choice2,choice3);
+    newBib = geraBiblio(choice1,choice2,choice3,choice5);
     PrintLibery(&newBib);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice4);
@@ -196,7 +198,7 @@ Libery makeBiblioEnca(){
 
 void makeBiblioVetor(){
     Library newLib, aux;
-    int choice1, choice2, choice3;
+    int choice1, choice2, choice3, choice4;
     long long comps, moves;
     double time_spent;
     system("clear");
@@ -210,8 +212,10 @@ void makeBiblioVetor(){
     printf("3 - 10000\n"); 
     printf("4 - 100000\n"); 
     printf("> ");
-    scanf("%d",&choice2); 
-    newLib = geraLibraryVet(choice1, choice2);
+    scanf("%d",&choice2);
+    printf("Digite o número mínimo de palavras do texto:\n> ");
+    scanf("%d",&choice4); 
+    newLib = geraLibraryVet(choice1,choice2,choice4);
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d", &choice3);
 

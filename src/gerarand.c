@@ -34,22 +34,22 @@ TWord geraPalavra(int max_size_pal){
 	return minhaWord;
 }
 
-Text geraTexto(int size_texto,int max_size_pal){
+Text geraTexto(int max_size_texto,int max_size_pal,int min_size_texto){
 	Text meuTexto;
 	Inicia(&meuTexto);
 	InsereTexto(&meuTexto,gambiarra());
-	for (int i = 0; i < rand() % size_texto+1; i++){
+	for (int i = 0; i < rand() % (max_size_texto+1-min_size_texto)+min_size_texto; i++){
 		TWord novaWord = geraPalavra(max_size_pal);
 		InsereTexto(&meuTexto,&novaWord);
 	}
 	return meuTexto;
 }
 
-Libery geraBiblio(int total_textos,int size_texto,int max_size_pal){
+Libery geraBiblio(int total_textos,int size_texto,int max_size_pal, int min_size_texto){
 	Libery myLib;
 	IniciaLibery(&myLib);
 	for (int i = 0; i < total_textos; i++){
-		Text novoTexto = geraTexto(size_texto,max_size_pal);
+		Text novoTexto = geraTexto(size_texto,max_size_pal,min_size_texto);
 		InsereLibery(&myLib,&novoTexto);
 	}
 	return myLib;
@@ -65,23 +65,23 @@ Word geraPalavraVet(){
 	return newWord;
 }
 
-aText geraTextoVet(int size_texto){
+aText geraTextoVet(int size_texto, int min_size_texto){
 	aText newText;
 	initText(&newText,size_texto);
-	for (int i = 0; i < rand() % newText.capacity+1; ++i){
+	for (int i = 0; i < rand() % (newText.capacity+1-min_size_texto)+min_size_texto; ++i){
 			Word randWord = geraPalavraVet();
 			insertWord(&newText, randWord);
 	}
+	printf("Tamanho do texto: %d\n\n", newText.size);
 	return newText;
 }
 
-Library geraLibraryVet(int index_textos, int size_texto){
+Library geraLibraryVet(int index_textos, int size_texto, int min_size_texto){
 	Library newLib;
 	initLib(&newLib, index_textos);
 	for (int i = 0; i < newLib.size; ++i){
-		aText randText = geraTextoVet(size_texto);
+		aText randText = geraTextoVet(size_texto, min_size_texto);
 		printText(randText);
-		printf("a\n");
 		insertText(&newLib,randText, i);
 	}
 	return newLib;

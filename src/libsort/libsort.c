@@ -1,6 +1,6 @@
 #include "../liblib/includes/aLib.h"
 
-void libSelectionSort(Library *library, int *count, int *moves){
+void libSelectionSort(Library *library, long long int *count, long long int *moves){
   int i, j, min;
   aText aux;
   for(i=0; i< library->size -1; i++){
