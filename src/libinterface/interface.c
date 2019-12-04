@@ -11,16 +11,9 @@
 #include <unistd.h>
 
 Text makeTextoEnca(){
-<<<<<<< Updated upstream
     int choice1,choice2,choice3,choice4;
     long long int comps=0;
-    int movs=0;
-=======
-    int choice1,choice2,choice3;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    long long int movs=0;
     Text newTexto;
     double time_spent=0.0;
 
@@ -37,55 +30,45 @@ Text makeTextoEnca(){
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice3);
     if (choice3 == 1){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         clock_t begin = clock();
-        textoEncaSelectionSort(newTexto.initial,&comps);
+        textoEncaSelectionSort(newTexto.initial,&comps,&movs);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
-=======
-        textoEncaSelectionSort(newTexto.initial);
->>>>>>> Stashed changes
-=======
-        textoEncaSelectionSort(newTexto.initial);
->>>>>>> Stashed changes
         PrintTexto(&newTexto);
         printf("\nTEMPO DE EXECUÇÃO: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES: %lld\n", movs);
     }
     else if (choice3 == 2){
         clock_t begin = clock();
-        textoEncaQuickSort(newTexto.initial, &comps);
+        textoEncaQuickSort(newTexto.initial, &comps,&movs);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         PrintTexto(&newTexto);
         printf("\nTEMPO DE EXECUÇÃO: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES: %lld\n", movs);
     }
 
     else if (choice3 == 3){
         clock_t begin = clock();
-        textoEncaSelectionSort(newTexto.initial,&comps);
+        textoEncaSelectionSort(newTexto.initial,&comps,&movs);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         printf("\nTEMPO DE EXECUÇÃO DO SELECTION SORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO SELECTION SORT: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES DO SELECTION SORT: %lld\n", movs);
         time_spent = 0.0;
+        comps = 0;
+        movs = 0;
         begin = clock();
-        textoEncaQuickSort(newTexto.initial, &comps);
+        textoEncaQuickSort(newTexto.initial, &comps,&movs);
         end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         printf("\nTEMPO DE EXECUÇÃO DO QUICK SORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO QUICK SORT: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES DO QUICKSORT: %lld\n", movs);
     }
-<<<<<<< Updated upstream
-
-=======
-    printf("Ordenado em %ld segundos\n", time(NULL)-start);
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     return newTexto;
 }
 
@@ -164,10 +147,9 @@ void makeTextoVetor(){
 }
 
 Libery makeBiblioEnca(){
-<<<<<<< Updated upstream
     int choice1,choice2,choice3,choice4,choice5;
     long long int comps=0;
-    int movs=0;
+    long long int movs=0;
     Libery newBib,extraBib1,extraBib2;
     double time_spent=0.0;
 
@@ -175,21 +157,7 @@ Libery makeBiblioEnca(){
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
     printf("Digite o número máximo e o número mínimo de textos de sua biblioteca:\n> ");
     scanf("%d %d",&choice1,&choice5);
-    printf("Digite o número de palavras dos textos da biblioteca:\n> ");
-=======
-    int choice1,choice2,choice3,choice4;
-    Libery newBib,extraBib;
-    long int start;
-
-    system("clear");
-    printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
-    printf("Digite o número de textos de sua biblioteca:\n>");
-    scanf("%d",&choice1);
     printf("Digite o número de palavras dos textos da biblioteca:\n>");
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     scanf("%d",&choice2);
     printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n>");
     scanf("%d",&choice3);
@@ -198,8 +166,6 @@ Libery makeBiblioEnca(){
     printf("Escolha seu método de sort:\n1- SelectionSort\n2- QuickSort\n3- Comparação de Sorts\n> ");
     scanf("%d",&choice4);
     if (choice4 == 1){
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         clock_t begin = clock();
         extraBib1.initial = biblioEncaSelectionSort(newBib.initial,&comps,&movs);
         clock_t end = clock();
@@ -207,15 +173,18 @@ Libery makeBiblioEnca(){
         PrintLibery(&extraBib1);
         printf("\nTEMPO DE EXECUÇÃO: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES: %lld\n", movs);
     }
     else if (choice4 == 2){
         clock_t begin = clock();
-        extraBib1.initial = biblioEncaQuickSort(newBib.initial,&comps);
+        extraBib1.initial = biblioEncaQuickSort(newBib.initial,&comps,&movs);
         clock_t end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         PrintLibery(&extraBib1);
         printf("\nTEMPO DE EXECUÇÃO: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES: %lld\n", movs);
+
     }
     else if (choice4 == 3){
         clock_t begin = clock();
@@ -224,29 +193,18 @@ Libery makeBiblioEnca(){
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         printf("\nTEMPO DE EXECUÇÃO DO SELECTION SORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO SELECTION SORT: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES DO SELECTION SORT: %lld\n", movs);
         time_spent = 0.0;
+        comps = 0;
+        movs = 0;
         begin = clock();
-        extraBib2.initial = biblioEncaQuickSort(newBib.initial,&comps);
+        extraBib2.initial = biblioEncaQuickSort(newBib.initial,&comps,&movs);
         end = clock();
         time_spent += (double) (end - begin)/ CLOCKS_PER_SEC;
         printf("\nTEMPO DE EXECUÇÃO DO QUICKSORT: %lfs\n", time_spent);
         printf("NUMERO DE COMPARAÇÕES DO QUICKSORT: %lld\n", comps);
+        printf("NUMERO DE MOVIMENTAÇÕES DO QUICKSORT: %lld\n", movs);
     }
-=======
-=======
->>>>>>> Stashed changes
-        extraBib.initial = biblioEncaSelectionSort(newBib.initial);
-        PrintLibery(&extraBib);
-    }
-    else if (choice4 == 2){
-        extraBib.initial = biblioEncaQuickSort(newBib.initial);
-        PrintLibery(&extraBib);
-    }
-    printf("Ordenado em %ld segundos\n", time(NULL)-start);
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     return newBib;
 }
 

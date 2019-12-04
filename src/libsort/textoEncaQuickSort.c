@@ -38,7 +38,7 @@ Tcel * textoJoin(Tcel* left_list, Tcel * pivot, Tcel * right_list)
     return left_list;
 }
 
-Tcel * textoEncaQuickSort(Tcel * list, long long int * comparar)
+Tcel * textoEncaQuickSort(Tcel * list, long long int * comparar, long long int * movimentar)
 {
     if (list == NULL || list->prox == NULL){
         (*comparar)++;
@@ -60,17 +60,21 @@ Tcel * textoEncaQuickSort(Tcel * list, long long int * comparar)
             {
                 (*comparar)++;
                 current_node->prox = left_sub_list;
+                (*movimentar)++;
                 left_sub_list = current_node;
+                (*movimentar)++;
             }
             else
             {
                 (*comparar)++;
                 current_node->prox = right_sub_list;
+                (*movimentar)++;
                 right_sub_list = current_node;
+                (*movimentar)++;
             }
         }
         current_node = prox_node;
     }
 
-    return textoJoin(textoEncaQuickSort(left_sub_list, comparar), pivot, textoEncaQuickSort(right_sub_list,comparar));
+    return textoJoin(textoEncaQuickSort(left_sub_list, comparar, movimentar), pivot, textoEncaQuickSort(right_sub_list,comparar, movimentar));
 }

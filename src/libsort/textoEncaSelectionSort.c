@@ -1,4 +1,4 @@
-Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
+Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar, long long int * movimentar){
     Tcel *a, *b, *c, *d, *r;
     a = b = head; 
   
@@ -20,14 +20,20 @@ Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
                         (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
+                        (*movimentar)++;
                         d->prox = b; 
+                        (*movimentar)++;
   
                         // Swap b and d pointers 
                         r = b; 
+                        (*movimentar)++;
                         b = d; 
+                        (*movimentar)++;
                         d = r; 
+                        (*movimentar)++;
   
                         c = d; 
+                        (*movimentar)++;
   
                         // Update the head 
                         head = b; 
@@ -42,15 +48,22 @@ Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
                         (*comparar)++;
                         // Move d before b 
                         b->prox = d->prox; 
+                        (*movimentar)++;
                         d->prox = b; 
+                        (*movimentar)++;
                         a->prox = d; 
+                        (*movimentar)++;
   
                         // Swap b and d pointers 
                         r = b; 
+                        (*movimentar)++;
                         b = d; 
+                        (*movimentar)++;
                         d = r; 
+                        (*movimentar)++;
   
                         c = d; 
+                        (*movimentar)++;
   
                         // Skip to the prox element 
                         // as it is already in order 
@@ -67,16 +80,24 @@ Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
                         (*comparar)++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
-                        b->prox = d->prox; 
+                        (*movimentar)++;
+                        b->prox = d->prox;
+                        (*movimentar)++; 
                         d->prox = r; 
+                        (*movimentar)++;
                         c->prox = b; 
+                        (*movimentar)++;
   
                         // Swap b and d pointers 
                         r = b; 
+                        (*movimentar)++;
                         b = d; 
+                        (*movimentar)++;
                         d = r; 
+                        (*movimentar)++;
   
                         c = d; 
+                        (*movimentar)++;
   
                         // Skip to the prox element 
                         // as it is already in order 
@@ -91,17 +112,26 @@ Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
                         (*comparar)++;
                         // Swap b->prox and d->prox 
                         r = b->prox; 
-                        b->prox = d->prox; 
+                        (*movimentar)++;
+                        b->prox = d->prox;
+                        (*movimentar)++; 
                         d->prox = r; 
+                        (*movimentar)++;
                         c->prox = b; 
+                        (*movimentar)++;
                         a->prox = d; 
+                        (*movimentar)++;
   
                         // Swap b and d pointers 
                         r = b; 
+                        (*movimentar)++;
                         b = d; 
+                        (*movimentar)++;
                         d = r; 
+                        (*movimentar)++;
   
                         c = d; 
+                        (*movimentar)++;
   
                         // Skip to the prox element 
                         // as it is already in order 
@@ -114,12 +144,16 @@ Tcel* textoEncaSelectionSort(Tcel *head, long long int * comparar){
                 // Update c and skip to the prox element 
                 // as it is already in order 
                 c = d; 
+                (*movimentar)++;
                 d = d->prox; 
+                (*movimentar)++;
             } 
         } 
   
         a = b; 
+        (*movimentar)++;
         b = b->prox; 
+        (*movimentar)++;
     }
     return head; 
 }

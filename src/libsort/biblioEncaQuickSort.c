@@ -38,7 +38,7 @@ Tccel * biblioJoin(Tccel* left_list, Tccel * pivot, Tccel * right_list)
     return left_list;
 }
 
-Tccel * biblioEncaQuickSort(Tccel * list, long long int * comparar)
+Tccel * biblioEncaQuickSort(Tccel * list, long long int * comparar, long long int * movimentar)
 {
     if (list == NULL || list->prox == NULL){
         (*comparar)++;
@@ -60,17 +60,21 @@ Tccel * biblioEncaQuickSort(Tccel * list, long long int * comparar)
             {
                 (*comparar)++;
                 current_node->prox = left_sub_list;
+                (*movimentar)++;
                 left_sub_list = current_node;
+                (*movimentar)++;
             }
             else
             {
                 (*comparar)++;
                 current_node->prox = right_sub_list;
+                (*movimentar)++;
                 right_sub_list = current_node;
+                (*movimentar)++;
             }
         }
         current_node = prox_node;
     }
 
-    return biblioJoin(biblioEncaQuickSort(left_sub_list, comparar), pivot, biblioEncaQuickSort(right_sub_list, comparar));
+    return biblioJoin(biblioEncaQuickSort(left_sub_list, comparar, movimentar), pivot, biblioEncaQuickSort(right_sub_list, comparar, movimentar));
 }
