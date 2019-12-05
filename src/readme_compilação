@@ -1,0 +1,2 @@
+compilar somente o "main.c"
+"gcc main.c"

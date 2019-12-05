@@ -16,7 +16,7 @@ TWord *auxFunction(){
 	TWord myword;
 	TWord *pword;
 	Inicializa(&myword);
-	AddNoFim(&myword,'a');
+	AddNoFim(&myword,97);
 	pword = &myword;
 	return pword;
 }

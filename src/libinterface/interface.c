@@ -155,10 +155,12 @@ Libery makeBiblioEnca(){
 
     system("clear");
     printf("CRIANDO BIBLIOTECA ENCADEADA\n\n");
-    printf("Digite o número máximo e o número mínimo de textos de sua biblioteca:\n> ");
-    scanf("%d %d",&choice1,&choice5);
-    printf("Digite o número de palavras dos textos da biblioteca:\n>");
-    scanf("%d",&choice2);
+    printf("Digite o número de textos de sua biblioteca:\n> ");
+    scanf("%d",&choice1);
+    printf("Digite o número máximo e o número mínimo de palavras nos textos de sua biblioteca:\n> ");
+    scanf("%d %d",&choice2, &choice5);
+    //printf("Digite o número de palavras dos textos da biblioteca:\n>");
+    //scanf("%d",&choice2);
     printf("Digite o tamanho máximo das palavras dos textos da biblioteca:\n>");
     scanf("%d",&choice3);
     newBib = geraBiblio(choice1,choice2,choice3,choice5);
